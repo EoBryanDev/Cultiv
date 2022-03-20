@@ -1,0 +1,239 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+@font-face {
+    font-family: nunito;
+    src: url(../fonts/Nunito-Regular.ttf);
+}
+
+@font-face {
+    font-family: K2D;
+    src: url(../fonts/K2D-Regular.ttf);
+}
+body{
+    font-family: nunito;
+}
+
+    /*Menu
+*/
+
+section{
+    margin-bottom: 60px;
+    padding: 20px;
+}
+
+@keyframes slide-down {
+    0% {
+
+    }
+
+    100%{
+        
+        background-color: transparent;
+        background-image: linear-gradient(to bottom, transparent, #2AFF16 99%), url(../images/grains.jpeg);
+        border-radius: 0;
+        height: 560px;
+    }
+}
+.background_menu{
+    background-size: 980px;
+    background-position-x: center;
+    background-color: transparent;
+    background-image: linear-gradient(to bottom, transparent, #2AFF16 99%), url(../images/grains.jpeg);
+    border-radius: 0 0 500em 500em;
+    
+    height: 560px;
+
+
+}
+
+.go-down{
+    animation: slide-down 4s;
+    animation-direction: reverse;
+}
+.menu_font{
+    
+    font-size: 34px;
+    font-style: italic;
+    
+    
+}
+
+.menu_font li{
+    margin-left: 2fr;
+}
+
+hr{
+    margin: 0 auto;
+    width: 70%;
+    background: #fff;
+}
+
+.background_menu nav div ul li a{
+    color: white;
+    font-weight: 50;
+}
+.background_menu nav div ul li a:hover{
+    color: #2AFF16;
+    font-weight: 700;
+}
+
+
+
+.retracao_sandwich .navbar-toggler-icon{
+    color: white;
+}
+
+.form_submit button{
+    text-decoration: none;
+    width: 100px;
+    border-radius: 12px;
+    background: #2AFF16;
+    font-weight: 800;
+    border:none;
+}
+
+
+.form_submit button:hover{
+    text-decoration: none;
+    background: #F4F4F4 ;
+    color: #696469 ;
+    font-weight: 800;
+    border:none;
+}
+
+.form_submit button a:hover{
+    text-decoration: none;   
+    
+}
+
+.form_submit_shop button{
+    text-decoration: none;
+    border-radius: 12px;
+    background: #2AFF16;
+    border:none;
+}
+.form_submit_shop button:hover{
+    
+    border-radius: 12px;
+    background: #F4F4F4 ;
+    color: #696469 ;
+    font-weight: 800;
+    border:#b1f9aa;
+}
+
+@media (max-width: 560px){
+    nav ul li{
+        display:inine;
+    }
+}
+/*Differencials*/
+
+#differencial{
+    margin-top: 120px;
+    margin-bottom: 120px;
+    padding: 30px;
+}
+.container #container_diferencials{
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+
+   
+    
+}
+
+/* chamada */
+#parallax{
+    margin-top: 40px;
+    font-family: K2D;
+    background-color: #2AFF16;
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}/*
+section #parallax{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}*/
+#parallax img{
+    position: absolute;
+    top: 5;
+    left: 2;
+    width: 7%;
+
+    object-fit: cover;
+}
+#parallax h2{
+    color: #F4F4F4;
+    position: relative;
+    text-align: center;
+    font-size: 3em;
+}
+/*scrolling_down*/
+@keyframes spin{
+    0% {
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.scrolling_down.animation{
+    animation: spin 14s linear infinite;
+}
+.scrolling_down{
+    width: 150px; 
+    position: relative; 
+    bottom: 100px; 
+    left: 50px;
+}
+/*localization */
+.bg-1{
+    image-resolution: inherit;
+    background-color: #B1F9AA;
+    background-image: linear-gradient(to top, transparent, #fff 90%), url();
+    /*background: url(../images/store.jpg);*/
+}
+
+/*footer*/
+
+footer{
+    background: #444;
+    width: 100%;
+    margin: 0 0 0 0;
+    
+}
+
+footer ul li a{
+    color: #2AFF16;
+}
+
+footer ul li a:hover{
+    color: #f4f4f4;
+}
+footer h3{
+    color: #F4F4F4;
+}
+footer .sizinhg_brand{
+    width: 86px;
+}
+.remove{
+    list-style: none;
+}
+footer ul li a i:hover{
+    color:  #2AFF16;
+}
+

@@ -1,0 +1,22 @@
+@import url(style_about.css);
+
+.card a{
+    
+    background: #2AFF16;
+    font-weight: 300;
+    border:none;
+}
+.card button{
+    
+    background-color: #fff;
+    color: #696469;
+    font-weight: 400;
+    border: 1px #696469 solid;
+}
+.card a:hover{
+    
+    border: 1px #696469 solid;
+    color: #696469;
+    background-color: #fff;
+    transition: ease 0.5s;
+}
