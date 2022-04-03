@@ -14,7 +14,7 @@
     transition: ease 0.5s;
 }
 
-.btnValida{
+.Valida{
     background-color: #2AFF16;
     border-radius: 6px;
     color: #fff;
@@ -22,7 +22,7 @@
 
 }
 
-.btnValida:hover{
+.Valida:hover{
     color: #696469;
     background-color: #fff;
     transition: ease 0.5s;

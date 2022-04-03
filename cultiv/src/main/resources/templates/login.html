@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrar</title>
+
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+    <!--Estilo da página-->
+    <link rel="stylesheet" href="../style/login.css">
+    <link rel="shortcut icon" href="../images/cultiv.pequeno.png" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/f581461def.js" crossorigin="anonymous"></script>
+
+</head>
+
+
+<body>
+	<section class="background_menu go-down mb-4">
+
+        <!--Barra de navegação-->
+        <nav class="navbar navbar-expand-lg navbar-light text-white ">
+
+
+
+            <!--Menu sandwitch para mobile-->
+            <button class="navbar-toggler navbar-dark ml-auto" type="button" data-toggle="collapse"
+                data-target="#navMenu" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <i class="fas fa-bars text-white"></i></span>
+            </button>
+
+            <!--Lista-->
+
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="nav mr-auto ml-auto menu_font ">
+                    <!--navbar-nav-->
+
+                    <li class="nav-item mt-auto mb-auto ">
+                        <a class="nav-link active" href="/">INÍCIO</a>
+                    </li>
+
+                    <li class="nav-item mt-auto mb-auto">
+                        <a href="/sobreNos" class="nav-link">SOBRE NÓS</a>
+                    </li>
+                    <!--Logotipo da barra-->
+                    <li class="nav-item mt-auto mb-auto d-none d-md-block">
+                        <a href="/" class="navbar-brand ">
+                            <img src="../images/cultiv.pequeno.png" alt="logo da Cultiv" class="img-fluid" width="140"
+                                style="display: inline; position: relative;">
+
+                        </a>
+                    </li>
+
+                    <li class="nav-item mt-auto mb-auto">
+                        <a href="/produtos" class="nav-link">PRODUTOS</a>
+                    </li>
+
+                    <li class="nav-item mt-auto mb-auto ">
+                        <form action="" class="d-flex mr-1 form_submit ml-4">
+                            <button class="btn btn-success" type="submit"><a href="/entrar"> ENTRAR</a></button>
+                        </form>
+                    </li>
+
+                    <li class="nav-item mt-auto mb-auto ">
+                        <form action="/carrinho" method="get" class="d-flex mr-4 form_submit_shop">
+                            <button class="btn btn-success" type="submit">
+                                <span class="mr-1">0</span><i class="fas fa-cart-plus"></i>
+                            </button>
+                        </form>
+                    </li>
+                    <li class="nav-item mt-auto mb-auto ">
+                        
+                            <button class="btn btnchanged" type="submit"><a href="/sair"> SAIR</a></button>
+                        
+                    </li>
+
+
+                </ul>
+
+
+            </div>
+
+
+        </nav>
+    </section>
+  
+  <div class="container" id="tamanhoContainer">
+            <div class="row">
+                <div class="col-md-12">
+                    <!--entrada de senha e email-->
+                    <form class="tamanhoContainerLogin" th:action="@{/admin}" method="post">
+                        <h3 class="mb-4">Login</h3>
+                        <div class="form-group">
+                            <label for="emailLogin">E-mail</label>
+                            <input type="text" required class="form-control" id="emailLogin" aria-describedby="emailHelp"
+                               name="username" placeholder="Insira E-mail">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="passwordLogin">Senha</label>
+                            <input type="password" required class="form-control" name="password" id="passwordLogin" placeholder="Senha">
+                        </div>
+                                                                                                                                             
+                        
+
+
+                        <button type="submit" class="btn btnchanged  btn-block">Entrar</button>
+
+                    </form>
+                    <div class="tamanhoContainerLogin">
+                        <h3 class="mb-4 text-center display-4">Registre-se</h3>
+
+                        <a href="cliente/cadastrar"><button  class="btn  btn-lg btn-block">  Registre-se </button></a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+</body>
+
+</html>
+<!--fim menu-->

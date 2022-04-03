@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html xmlns:layout="http:www.w3.org/1999/xhtml" layout:decorate="~{cliente/fragments/layout}" lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Carrinho de Compra</title>
+
+    
+
+</head>
+
+<body>
+<div class="container" layout:fragment="corpo">
+   <div class="row">
+
+                <h2 class="display-2">Carrinho de Compras</h2>
+                <hr>
+            </div>
+
+            <div class="col mt-4">
+                <p>Conheça nosso portfólio de produtos e temos certeza que algum deles pode te ajudar </p>
+            </div>
+
+            <hr class="mt-5 mb-3">
+
+            <div class="row">
+
+                <div class="col-md-12">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Descricao</th>
+                                <th scope="col">Qtd.Estoque</th>
+                                <th scope="col">Valor Unitário</th>
+                                <th scope="col">Qtd.</th>
+                                <th scope="col">Subtotal</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="item : ${listaItens}">
+                                <th scope="row" th:text="${item.produto.id}" ></th>
+                                <td>
+                                    <div class="row">
+                                        <div class="col-6 text-left">
+                                            <img alt="" th:src="@{/mostrarImagem/{imagem}(imagem=${item.produto.nomeImagens})}" class="img-fluid" width="70">
+                                        </div>
+                                        <div class="col-6 text-left">
+                                            <p th:text="${item.produto.descricao}"></p>
+                                            <p th:text="${item.produto.grandeza}"></p>
+
+                                        </div>
+                                    </div>
+                                </td>
+                                <td > Em Estoque</td>
+                                <td>R$ <span th:text="${item.valorUnitario}"></span></td>
+                                <td>
+                                <span th:text="${item.quantidade}"></span>
+                                
+                                <a th:href="@{/alterarQuantidade/{id}/{acao}(id=${item.produto.id},acao=${1})}" class="btn btn-sm btn-info"><i class="fa fa-plus"></i></a>
+                                <a th:href="@{/alterarQuantidade/{id}/{acao}(id=${item.produto.id},acao=${0})}" class="btn btn-sm btn-info"><i class="fa fa-minus"></i></a>
+                                </td>
+                                <td > R$ <span th:text="${item.valorTotal}"></span></td>
+                                <td><a th:href="@{/removerItem/{id}(id=${item.produto.id})}" class="btn btn-sm btn-button bg-danger text-white"><i class="fa fa-trash"></i></a></td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="row mt-4 justify-content-around">
+                <div class="col-md-3">
+                    <h4>Entrega</h4>
+                    <form action="" method="" class="form-inline">
+                        <div class="form-group ">
+                            <label for="frete"></label>
+                            <input type="text" name="frete" id="frete" class="form-control ">
+                            <button type="submit" class="btn btn-button btnchanged ml-2 text-white">Calcular Frete</button>
+                        </div>
+                    </form>
+                    <p>Total Frete : R$ 0,00</p>
+                </div>
+
+                <div class="col-md-4 align-right">
+                    <h4>Total do Pedido:</h4>
+                    <table class="table">
+
+
+                        <tr>
+                            <th scope="row">Subtotal</th>
+                            <td > R$ <span th:text="${compra.valorTotal}"></span></td>
+
+                        </tr>
+                        <tr>
+                            <th scope="row">Frete</th>
+                            <td>R$0,00</td>
+
+                        </tr>
+                        <tr>
+                            <th scope="row">Total Com Frete</th>
+                            <td>R$ <span th:text="${compra.valorTotal}"></span></td>
+
+                        </tr>
+                        <tr>
+                            
+                            <td colspan="3"><a href="/finalizar" class="btn btn-button btnchanged btn-block text-white">Finalizar Compra</a></td>
+                            
+
+                        </tr>
+                        <tr>
+                        	<td colspan="3"><a href="/produtos" class="btn btn-button btn-info btn-block text-white">Continue Comprando</a></td>
+                        </tr>
+
+
+                    </table>
+                </div>
+            </div>
+</div>
+
+   
+
+</body>
+
+</html>

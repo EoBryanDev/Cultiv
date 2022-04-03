@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 import org.springframework.beans.factory.annotation.Value;
 
@@ -34,15 +35,22 @@ public class Usuario implements Serializable {
 	private String cep;//ok
 	
 	private String endereco; // ok 
-	
+		
+
 	private int numero; // ok 
 	
 	private String complemento; // ok 
 	
-	//@ManyToOne
+	@OneToOne
 	private Carrinho carrinho;
 
-	
+	public Carrinho getCarrinho() {
+		return carrinho;
+	}
+
+	public void setCarrinho(Carrinho carrinho) {
+		this.carrinho = carrinho;
+	}
 	public String getTel() {
 		return tel;
 	}

@@ -21,24 +21,9 @@
 
 }
 
-@keyframes slide-down {
-    0% {
-
-    }
-
-    100%{
-        
-        
-    }
-}
-
-.go-down{
-    animation: none;
-    animation-direction: none;
-}
 
 
-/*sobre nÃ³s*/
+/*sobre nós*/
 .efeito-redor{
     float: left;
     

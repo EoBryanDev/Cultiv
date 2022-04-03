@@ -15,6 +15,7 @@
 }
 body{
     font-family: nunito;
+    padding:0;
 }
 
     /*Menu
@@ -25,27 +26,12 @@ section{
     padding: 20px;
 }
 
-@keyframes slide-down {
-    0% {
 
-    }
-
-    100%{
-        
-        background-color: transparent;
-        background-image: linear-gradient(to bottom, transparent, #2AFF16 99%), url(../images/grains.jpeg);
-        border-radius: 0;
-        height: 560px;
-    }
-}
 .background_menu{
     background-size: 980px;
     background-position-x: center;
     background-color: transparent;
-    background-image: linear-gradient(to bottom, transparent, #2AFF16 99%), url(../images/grains.jpeg);
-    border-radius: 0 0 500em 500em;
-    
-    height: 560px;
+    background-image: linear-gradient(to bottom, transparent, #2AFF16 99%), url(../images/backgroundLogin.png);
 
 
 }
@@ -77,7 +63,7 @@ hr{
     font-weight: 50;
 }
 .background_menu nav div ul li a:hover{
-    color: #2AFF16;
+    color: #fff;
     font-weight: 700;
 }
 
@@ -125,26 +111,10 @@ hr{
     border:#b1f9aa;
 }
 
-@media (max-width: 560px){
-    nav ul li{
-        display:inine;
-    }
-}
 /*Differencials*/
 
-#differencial{
-    margin-top: 120px;
-    margin-bottom: 120px;
-    padding: 30px;
-}
-.container #container_diferencials{
-    margin-left: auto;
-    margin-right: auto;
-    width: 80%;
 
-   
-    
-}
+
 
 /* chamada */
 #parallax{
@@ -158,16 +128,7 @@ hr{
     display: flex;
     justify-content: center;
     align-items: center;
-}/*
-section #parallax{
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}*/
+}
 #parallax img{
     position: absolute;
     top: 5;
@@ -205,7 +166,7 @@ section #parallax{
     image-resolution: inherit;
     background-color: #B1F9AA;
     background-image: linear-gradient(to top, transparent, #fff 90%), url();
-    /*background: url(../images/store.jpg);*/
+    
 }
 
 /*footer*/
@@ -237,3 +198,18 @@ footer ul li a i:hover{
     color:  #2AFF16;
 }
 
+/*botao*/
+.btnchanged{
+background: #2AFF16;
+    font-weight: 300;
+    border: none;
+    margin:5px;
+}
+
+.btnchanged:hover{
+    
+    border: 1px #696469 solid;
+    color: #fff;
+    background-color: #696469;
+    transition: ease 0.5s;
+}

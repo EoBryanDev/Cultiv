@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Cultiv</title>
+
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+    <!--Estilo da página-->
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/login.css">
+    <link rel="stylesheet" href="style/modal.css">
+    <link rel="stylesheet" href="style/products.css">
+    <link rel="stylesheet" href="style/sign_in.css">
+    <link rel="stylesheet" href="style/style_about.css">
+    <link rel="stylesheet" href="style/style_contact.css">
+
+    <link rel="shortcut icon" href="images/cultiv.pequeno.png" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/f581461def.js" crossorigin="anonymous"></script>
+
+    <!--Javascript-->
+    <link rel="stylesheet" href="style/modal.css">
+    <script src="js/modal.js"></script>
+
+</head>
+
+<body>
+
+    <!--Menu-->
+    <section class="background_menu go-down mb-4">
+
+        <!--Barra de navegação-->
+        <nav class="navbar navbar-expand-lg navbar-light text-white ">
+
+
+
+            <!--Menu sandwitch para mobile-->
+            <button class="navbar-toggler navbar-dark ml-auto" type="button" data-toggle="collapse"
+                data-target="#navMenu" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <i class="fas fa-bars text-white"></i></span>
+            </button>
+
+            <!--Lista-->
+
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="nav mr-auto ml-auto menu_font ">
+                    <!--navbar-nav-->
+
+
+                    <!--Logotipo da barra-->
+                    <li class="nav-item mt-auto mb-auto d-none d-md-block">
+                        <a href="/" class="navbar-brand ">
+                            <img src="images/cultiv.pequeno.png" alt="logo da Cultiv" class="img-fluid" width="140"
+                                style="display: inline; position: relative;">
+
+                        </a>
+                    </li>
+
+
+
+
+
+                </ul>
+
+
+            </div>
+
+
+        </nav>
+    </section>
+    <!--input dos produtos -->
+    <section>
+        <div class="container">
+            <div class="row">
+
+                <h2 class="display-2">Finalizar Compra - <span ><h4 th:text="${cliente.nome}"></h4></span></h2>
+
+            </div>
+
+
+
+            <hr class="mt-5 mb-3">
+
+            <aside>
+                <div class="row justify-content-around">
+
+                    <div class="col-md-7">
+
+                        <h3>Detalhes da Entrega </h3>
+
+                        <form>
+
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="inputEmail4">Nome</label>
+                                    <input type="email" class="form-control" id="inputEmail4">
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                    <label for="inputPassword4">Sobrenome</label>
+                                    <input type="password" class="form-control" id="inputPassword4">
+                                </div>
+
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="inputEmail4">Celular</label>
+                                    <input type="email" class="form-control" id="inputEmail4">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="inputPassword4">Telefone</label>
+                                    <input type="password" class="form-control" id="inputPassword4">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="inputAddress">Endereço</label>
+                                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="inputAddress2">Referencia</label>
+                                <input type="text" class="form-control" id="inputAddress2"
+                                    placeholder="Apartment, studio, or floor">
+                            </div>
+
+                            <div class="form-row">
+
+                                <div class="form-group col-md-4">
+                                    <label for="inputZip">CEP</label>
+                                    <input type="text" class="form-control" id="inputZip">
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                    <label for="inputCity">Cidade</label>
+                                    <input type="text" class="form-control" id="inputCity">
+                                </div>
+
+                                <div class="form-group col-md-2">
+                                    <label for="inputState">Estado</label>
+                                    <select id="inputState" class="form-control">
+                                        <option selected>Estado</option>
+                                        <option>SP</option>
+                                    </select>
+                                </div>
+
+                            </div>
+
+                            <div class="form-group">
+
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                                    <label class="form-check-label" for="gridCheck">
+                                        Confirmo que todos os dados computados são verídicos
+                                    </label>
+                                </div>
+
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Salvar</button>
+
+                        </form>
+
+                        <a href="/cliente/cadastrarCartao" class="mt-4 btn btn-button btn-block bg-warning">Adicionar Cartão</a>
+
+                    </div>
+            
+                <div class="col-md-5">
+                   
+                        
+                            <table class="table table-sm">
+                                <thead class="thead-dark">
+                                    <tr >
+                                        <th scope="col">#</th>
+                                        <th scope="col">Descricao</th>
+                                        <th scope="col">Preço</th>
+                                        <th scope="col">Qtd.</th>
+                                        <th scope="col">Subtotal</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <form action="/finalizar/confirmar" method="POST">
+                                    <tr th:each="item : ${listaItens}">
+                                        <th scope="row " th:text="${item.produto.id}"></th>
+                                        <td>
+                                            <div class="row">
+                                                <div class="col-6 text-left">
+                                                    <img alt="" th:src="@{/mostrarImagem/{imagem}(imagem=${item.produto.nomeImagens})}" class="img-fluid" width="30">
+                                                </div>
+                                                <div class="col-6 text-left">
+                                                    <p th:text="${item.produto.descricao}"></p>
+                                                    <p th:text="${item.produto.grandeza}"></p>
+        
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>R$ <span th:text="${item.valorUnitario}"></span></td>
+                                        <td><span th:text="${item.quantidade}"></span></td>
+                                        <td>R$ <span th:text="${item.valorTotal}"></span></td>
+                                    </tr>
+                                     <tr>                                    
+                                        <td colspan="6">
+                                            <button type="submit" class="btn btn-button btnchanged btn-block text-white">Finalizar Compra</button>
+                                        </td>
+                                                  
+                                    </tr>
+                                    </form>
+                                   
+                                </tbody>
+                            </table>
+                               
+                    
+                </div>
+                </div>
+        </div>
+        </aside>
+
+
+
+
+
+        </div>
+    </section>
+
+
+    <footer>
+
+        <div class="p-4 ">
+            <div class="row">
+                <div class="col-md-1 text-left">
+                    <img src="images/cultiv.pequeno.png" alt="" class="sizinhg_brand">
+                </div>
+
+                <div class="col-md-5">
+                    <h3 class="ml-4">Mapa do site</h3>
+                    <nav class="navbar navbar-expand-lg ml-4">
+                        <ul class="remove">
+                            <li class="nav-item">
+                                <a href="/" class="nav-link">Início</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/sobre_nos" class="nav-link">Sobre Nós</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/produtos" class="nav-link">Produtos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/login" class="nav-link">Área de Membro</a>
+                            </li>
+
+                        </ul>
+                    </nav>
+                </div>
+
+                <div class="col-md-5">
+                    <h3>Redes Sociais</h3>
+                    <nav class="navbar navbar-expand-lg ">
+                        <ul class="nav ml-0">
+                            <li class="nav-item">
+                                <a href="" class="nav-link">
+                                    <i class="fab fa-facebook fa-2x"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="" class="nav-link">
+                                    <i class="fab fa-instagram fa-2x "></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="" class="nav-link">
+                                    <i class="fab fa-whatsapp fa-2x "></i>
+                                </a>
+                            </li>
+                            <!--
+                <li class="nav-item">
+                    <a href="" class="nav-link">
+                        <i class="fab fa-facebook-square fa-2x text-white"></i>
+                    </a>
+                </li>
+                -->
+                        </ul>
+                    </nav>
+                    <div class="row">
+                        <div class="col-md">
+                            <h3>Contatos</h3>
+                            <nav class="navbar navbar-expand-lg">
+                                <ul class="remove">
+                                    <li class="nav-item">
+                                        <a href="/contato" class="nav-link">Fale Conosco</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="" class="nav-link">FAQ</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+    <p class="text-center">Todos os direitos reservados para Bryan. Criado 08/2021</p>
+
+    <!--JS and Jquery-->
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

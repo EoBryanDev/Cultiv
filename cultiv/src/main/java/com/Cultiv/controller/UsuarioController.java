@@ -8,13 +8,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.Cultiv.model.Carrinho;
 import com.Cultiv.model.Usuario;
+import com.Cultiv.repository.CarrinhoRepository;
 import com.Cultiv.repository.UsuarioRepository;
 import com.Cultiv.services.CookieService;
 
@@ -23,6 +26,9 @@ public class UsuarioController {
 
 	@Autowired
 	private UsuarioRepository ur;
+	
+	@Autowired
+	private CarrinhoRepository cr;
 	
 
 
@@ -37,9 +43,18 @@ public class UsuarioController {
 	@RequestMapping(value = "/registrar", method = RequestMethod.POST)
 	public String gravarUsuario(Usuario usuario) {
 		
+		// erro aqui e na construção do carrinho ao fazer a permanencia do carrinho relacionada ao usuario 
+		/*Carrinho carrinho = new Carrinho();
+		carrinho.setUsuario(usuario);
+		
+		carrinho.setProdutos(null);
+		carrinho.setQuantidadeItens(0.0);
+		
+		usuario.setCarrinho(carrinho);
+		cr.save(carrinho);
+		*/
 		ur.save(usuario);
-		
-		
+								
 		
 		return "redirect:/produtos";
 	}
@@ -83,14 +98,23 @@ public class UsuarioController {
 				
 	}
 	
-	// perfil
+	// rota para abrir o perfil
 		@RequestMapping(value = "/perfil", method = RequestMethod.GET)
 		public ModelAndView abrirPerfil() {
 			ModelAndView mv = new ModelAndView("pgInternas/perfil");
 
 			return mv;
 		}
-	
+	//recuperar o perfil logado
+		@RequestMapping(value = "/perfil/{id}")
+		public ModelAndView detalhePerfil(@PathVariable("id") long id) {
+			Usuario usuario = ur.findById(id);
+			
+			ModelAndView mv = new ModelAndView("pgInternas/perfil");
+			mv.addObject("usuario", usuario);
+
+			return mv;
+		}
 		//passar pra todas as paginas o id do usuario logado
 		
 	

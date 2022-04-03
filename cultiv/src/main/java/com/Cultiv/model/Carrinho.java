@@ -10,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 
 
@@ -23,14 +24,13 @@ public class Carrinho implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long idCarrinho;	
 	
-	//@OneToMany(mappedBy = "carrinho",cascade = CascadeType.ALL)
+	@OneToOne(mappedBy = "carrinho",cascade = CascadeType.ALL)
 	private Usuario usuario;
 	
-	@OneToMany(mappedBy = "carrinho",cascade = CascadeType.ALL)
-	private List<Produto>produtos;
-	
-	
-	
+	// erro aqui e na construção do carrinho ao fazer a instancia do usuario 
+	@OneToMany(mappedBy = "carrinho",cascade = CascadeType.REMOVE)
+	private List<Produto>produtos = null;
+			
 	private double quantidadeItens;
 	
 	

@@ -10,60 +10,108 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 
 @Entity
+@Table(name = "produto")
 public class Produto implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
+	
+		public Produto() {
+			super();
+		}
 		
 		@Id
-		@GeneratedValue(strategy = GenerationType.IDENTITY)
-		private long idProduto;
+		@GeneratedValue(strategy = GenerationType.AUTO)
+		private Long id;
 		
-		private String nomeProduto;
+		private String descricao;
 		
-		private double precoProduto;
+		private double preco;
 		
-		private double pesoProduto;		
+		private String grandeza;	
 		
-		@ManyToOne
-		private Carrinho carrinho;
-			
+		private String marca;
 		
-		//getters e setters
-		public long getIdProduto() {
-			return idProduto;
+		private String categoria;
+		
+		private double quantidadeEstoque = 0.0;
+		
+		private String nomeImagens;
+		
+		
+
+		public String getNomeImagens() {
+			return nomeImagens;
 		}
 
-		public void setIdProduto(long idProduto) {
-			this.idProduto = idProduto;
+		public void setNomeImagens(String nomeImagens) {
+			this.nomeImagens = nomeImagens;
 		}
 
-		public String getNomeProduto() {
-			return nomeProduto;
+		public Long getId() {
+			return id;
 		}
 
-		public void setNomeProduto(String nomeProduto) {
-			this.nomeProduto = nomeProduto;
+		public void setId(Long id) {
+			this.id = id;
+		}
+		
+		
+
+		public String getDescricao() {
+			return descricao;
 		}
 
-		public double getPrecoProduto() {
-			return precoProduto;
+		public void setDescricao(String descricao) {
+			this.descricao = descricao;
 		}
 
-		public void setPrecoProduto(double precoProduto) {
-			this.precoProduto = precoProduto;
+		public String getMarca() {
+			return marca;
 		}
 
-		public double getPesoProduto() {
-			return pesoProduto;
+		public void setMarca(String marca) {
+			this.marca = marca;
 		}
 
-		public void setPesoProduto(double pesoProduto) {
-			this.pesoProduto = pesoProduto;
+		public double getPreco() {
+			return preco;
 		}
 
+		public void setPreco(double preco) {
+			this.preco = preco;
+		}
+
+		public String getGrandeza() {
+			return grandeza;
+		}
+
+		public void setGrandeza(String grandeza) {
+			this.grandeza = grandeza;
+		}
+
+		public String getCategoria() {
+			return categoria;
+		}
+
+		public void setCategoria(String categoria) {
+			this.categoria = categoria;
+		}
+
+		public double getQuantidadeEstoque() {
+			return quantidadeEstoque;
+		}
+
+		public void setQuantidadeEstoque(double quantidadeEstoque) {
+			this.quantidadeEstoque = quantidadeEstoque;
+		}
+		
+		
+		
+		
 
 		
 }

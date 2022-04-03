@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html xmlns:layout="http:www.w3.org/1999/xhtml" layout:decorate="~{cliente/fragments/layout}" lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Registrar-se</title>
+    
+    
+
+    
+
+</head>
+</head>
+
+
+<body>
+
+
+    <section>
+        <div class="container" id="tamanhoContainer" layout:fragment="corpo">
+
+            <h2 class="headerForm">Novo Cadastro</h2>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <!--entrada de senha e email-->
+                    <form action="/cliente/salvar" th:object="${cliente}" method="POST" class="tamanhoContainerLogin">
+
+                        <div class="form-group">
+                            <label for="nameLogin">Nome</label>
+                            <input type="text" class="form-control" id="nameLogin"
+                                placeholder="Insira seu nome completo" th:field="*{nome}">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="cpfLogin">CPF</label>
+                            <input type="text" class="form-control" id="cpfLogin" placeholder="Insira seu CPF"
+                                maxlength="14" onkeydown="return SomenteNumero(event)" onkeypress="maskCPF(this)" th:field="*{cpf}">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="emailLogin">E-mail</label>
+                            <input type="email" class="form-control" id="emailLogin" placeholder="Insira um email"
+                                th:field="*{email}">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="emailLogin">Senha</label>
+                            <input type="password" class="form-control" id="senhaLogin" placeholder="Insira uma senha forte"
+                                th:field="*{senha}">
+                                <small>Insira senha com mais de 6 caracteres.</small>
+                        </div>
+<!--  
+                        <div class="form-group">
+                            <label for="telefoneLogin">Telefone</label>
+                            <input type="text" class="form-control" id="telefoneLogin" maxlength="14"
+                                placeholder="Ex. (xx) 4444-4444" onkeydown="return SomenteNumero(event)"
+                                onkeypress="maskTEL(this)" name="tel">
+                        </div>
+-->
+                        <div class="form-group">
+                            <label for="celLogin">Celular</label>
+                            <input type="text" class="form-control" id="celLogin" maxlength="16"
+                                placeholder="Ex. (xx) 94444-4444" onkeydown="return SomenteNumero(event)"
+                                onkeypress="maskCEL(this)" th:field="*{celular}">
+                        </div>
+<!-- 
+                        <div class="form-group">
+                            <label for="cepLogin">CEP</label>
+                            <input type="text" class="form-control" id="cepLogin" maxlength="9"
+                                placeholder="Ex. 55555-333" onkeydown="return SomenteNumero(event)"
+                                onkeypress="maskCEP(this)" onblur="pesquisarCep()" name="cep">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="logradouroLogin">Endereço</label>
+                            <input type="text" class="form-control" id="logradouroLogin" name="endereco" required disabled >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="númeroCasaLogin">Número</label>
+                            <input type="text" class="form-control" id="numeroCasaLogin" name="numero">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="bairroLogin">Bairro</label>
+                            <input type="text" class="form-control" id="bairroLogin" required disabled>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="cidadeLogin">Cidade</label>
+                            <input type="text" class="form-control" id="cidadeLogin" required disabled>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="estadoLogin">Estado</label>
+                            <input type="text" class="form-control" id="estadoLogin" required disabled>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="complementoLogin">Complemento</label>
+                            <input type="text" class="form-control" id="complementoLogin" name="complemento">
+                        </div>
+ -->
+
+
+                        <button onblur="botao()" type="submit" id="btnCadastrar" class="btn btn-block Valida"
+                            onclick="return validaLogin()">Cadastrar</button>
+
+                        <span id="mostraJson"></span>
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    
+   
+     
+</body>
+
+</html>
+<!--fim menu-->
