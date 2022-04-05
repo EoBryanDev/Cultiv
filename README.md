@@ -11,3 +11,7 @@ _para teste é necessário um banco de dados com nome "databasepi"_
 Além disso o projeto conta com carrinho de compras e finalizar o pedido.
 Ainda para essa versão não foi possível a implantação de adição de cartão de crédito e tb calculo de frete.
 
+_Página de painel do funcionário é: "/home"_
+
+**Obs:É necessário fazer uma inserção diretamente no banco de dados na tabela funcionários, pelo menos o campo email e senha.
+Após isto, ir ao painel de funcionário e definir permissões “gerente” e “funcionário”.**
